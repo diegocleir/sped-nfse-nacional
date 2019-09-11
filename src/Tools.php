@@ -176,7 +176,7 @@ class Tools extends BaseTools
      */
     public function recepcionarLoteRps($arps, $lote)
     {
-        $operation = 'EnviarLoteRps';
+        $operation = 'RecepcionarLoteRps';
         $no_of_rps_in_lot = count($arps);
         if ($no_of_rps_in_lot > 50) {
             throw new \Exception('O limite é de 50 RPS por lote enviado.');
@@ -187,7 +187,7 @@ class Tools extends BaseTools
             $xmlsigned = $this->sign($xml, 'InfRps', 'Id');
             $content .= $xmlsigned;
         }
-        $contentmsg = "<EnviarLoteRpsEnvio xmlns=\"{$this->wsobj->msgns}\">"
+        $contentmsg = "<RecepcionarLoteRpsEnvio xmlns=\"{$this->wsobj->msgns}\">"
             . "<LoteRps Id=\"$lote\" versao=\"{$this->wsobj->version}\">"
             . "<NumeroLote>$lote</NumeroLote>"
             . "<Cnpj>" . $this->config->cnpj . "</Cnpj>"
@@ -197,7 +197,7 @@ class Tools extends BaseTools
             . $content
             . "</ListaRps>"
             . "</LoteRps>"
-            . "</EnviarLoteRpsEnvio>";
+            . "</RecepcionarLoteRpsEnvio>";
         
         $content = $this->sign($contentmsg, 'LoteRps', 'Id');
         Validator::isValid($content, $this->xsdpath);
