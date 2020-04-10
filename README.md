@@ -1,6 +1,6 @@
 # sped-nfse-nacional
 
-# Retorno ao status PRE-ALFA (não use em produção)
+# ESSE PACOTE SERÁ REMOVIDO !!!
 
 [![Join the chat at https://gitter.im/nfephp-org/sped-nfse-nacional](https://badges.gitter.im/nfephp-org/sped-nfse-nacional.svg)](https://gitter.im/nfephp-org/sped-nfse-nacional?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
